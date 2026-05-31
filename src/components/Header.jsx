@@ -69,6 +69,13 @@ export default function Header() {
               Login
             </a>
           )}
+
+          {/* Link zum Erstellen eines neuen Inserats nur fuer eingeloggte Nutzer */}
+          {user && (
+          <a href="/inserate/neu" className="hover:text-green-200 transition-colors">
+              Neues Inserat
+            </a>
+          )}
         </nav>
 
       </div>
