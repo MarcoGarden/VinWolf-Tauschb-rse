@@ -20,6 +20,9 @@ import ProtectedRoute from './components/ProtectedRoute'
 // Profile: geschuetzte Profilseite fuer eingeloggte Nutzer
 import Profile from './pages/Profile'
 
+// CreateListing: Formularseite fuer neue Inserate
+import CreateListing from './pages/CreateListing'
+
 function App() {
   return (
     // AuthProvider ganz aussen — damit Login-Status überall verfügbar ist
@@ -66,9 +69,18 @@ function App() {
                       </ProtectedRoute>
                                         }
               />
+              {/* Neues Inserat: nur sichtbar wenn der Nutzer eingeloggt ist */}
+              <Route
+                  path="/inserate/neu"
+                    element={
+              <ProtectedRoute>
+              <CreateListing />
+              </ProtectedRoute>
+                                        }
+              />
             </Routes>
           </main>
-
+        
           {/* Footer erscheint auf jeder Seite */}
           <Footer />
         </div>
