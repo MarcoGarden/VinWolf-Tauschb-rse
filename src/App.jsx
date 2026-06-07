@@ -23,6 +23,8 @@ import Profile from './pages/Profile'
 // CreateListing: Formularseite fuer neue Inserate
 import CreateListing from './pages/CreateListing'
 
+// ListingDetail: Detailseite fuer ein einzelnes Inserat
+import ListingDetail from './pages/ListingDetail'
 // Listings: Uebersichtsseite fuer alle Inserate
 import Listings from './pages/Listings'
 
@@ -77,6 +79,8 @@ function App() {
 
 
               {/* Neues Inserat: nur sichtbar wenn der Nutzer eingeloggt ist */}
+              {/* Inserat-Detailseite: sichtbar fuer alle Besucher */}
+              <Route path="/inserate/:id" element={<ListingDetail />} />
               <Route
                   path="/inserate/neu"
                     element={
