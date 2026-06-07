@@ -25,6 +25,9 @@ import CreateListing from './pages/CreateListing'
 
 // ListingDetail: Detailseite fuer ein einzelnes Inserat
 import ListingDetail from './pages/ListingDetail'
+// Listings: Uebersichtsseite fuer alle Inserate
+import Listings from './pages/Listings'
+
 function App() {
   return (
     // AuthProvider ganz aussen — damit Login-Status überall verfügbar ist
@@ -71,6 +74,10 @@ function App() {
                       </ProtectedRoute>
                                         }
               />
+             {/* Inserate-Uebersicht: sichtbar fuer alle Besucher */}
+              <Route path="/inserate" element={<Listings />} />
+
+
               {/* Neues Inserat: nur sichtbar wenn der Nutzer eingeloggt ist */}
               {/* Inserat-Detailseite: sichtbar fuer alle Besucher */}
               <Route path="/inserate/:id" element={<ListingDetail />} />
